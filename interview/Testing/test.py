@@ -22,3 +22,7 @@ if __name__ == "__main__":
     #1000000 bucket_size [10 - 100000]
     #1000000 = max_buckets * bucket_size
     
+    str = "ABC"
+    print(chr(ord(str[1])+1))
+    print(ord('Z') - ord('A'))
+    print(ord('9')-ord('0'))

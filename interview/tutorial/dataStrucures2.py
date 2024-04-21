@@ -24,12 +24,15 @@ if __name__ == '__main__':
     print("list(tel):", list(tel))
     print("sorted(tel):", sorted(tel))
 
+    print("'jluis' in tel:",'jluis' in tel)
+
     anotherDirectory = dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])
     print("anotherDirectory:", anotherDirectory)
     tel2 = dict(jan=1, feb=2, mar=3)
     print('tel2:', tel2)
     tel3 = {x: x + '.' for x in tel}
     print('tel3:', tel3)
+    
     
     # Looping techniques
     for k,v in tel.items():
