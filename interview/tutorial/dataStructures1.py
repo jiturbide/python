@@ -114,4 +114,8 @@ if __name__ == '__main__':
     
     # print([].pop())
     
+    a = [1,2,1]
+    b = [1,2]
+    
+    print('Compare list', b == a)
     
