@@ -8,7 +8,7 @@ def fun(arr):
 if __name__ == '__main__':
     arr = [7, 1, 3, 2, 4, 5, 6]
     result = arr.sort()
-
+    print(arr)
     print('result', result)
     
     # Operations with arrays
