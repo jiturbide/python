@@ -65,3 +65,16 @@ if __name__ == '__main__':
     sorted_x = sorted(x.items(), key=lambda kv: kv[1])
     print('sorted:', sorted_x)
 
+    original_list = [5, 1, 2, 3, 4]
+    print(original_list.copy())
+    print(sorted(original_list, reverse = True))
+    print(original_list.sort())
+    print(original_list)
+
+    heap = []
+
+    copy = sorted(original_list, reverse=True)
+    for i in range(3):
+        heap.append(copy[i])
+
+    print(heap)
