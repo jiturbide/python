@@ -6,7 +6,8 @@ class Solution:
         if len(strs) == 0:
             return ""
         str0 = " ".join(strs)
-        print("->", str0, "<-")
+        if str0 == "":
+            return " "
         return str0
 
     def decode(self, s: str) -> List[str]:

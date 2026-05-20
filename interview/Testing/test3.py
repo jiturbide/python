@@ -15,3 +15,12 @@ if __name__ == "__main__":
                 current_maximum = current_maximum + 1
             if current_maximum > maximum:
                 maximum = current_maximum
+
+    arr2 = []
+    arr2.append([1,2])
+    arr2.append([1,3])
+
+    print(arr2)
+
+
+
