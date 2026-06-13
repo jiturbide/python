@@ -1,17 +1,19 @@
-import math
-import os
-import random
-import re
-import sys
+from collections import deque
 
-# 
 
 def fun(arr):
     return arr
 
 if __name__ == '__main__':
-    arr = [7, 1, 3, 2, 4, 5, 6]
-    result = sort(arr)
+    print("Start of the program")
 
-    expected = 0
-    print("Result:", result, ", expected:", expected, ", correct:", result == expected)
+    testCases = [
+        ([7, 1, 3, 2, 4, 5, 6], 0, 0)
+    ]
+
+    for nums, k, expected in testCases:
+        result = fun(nums)
+        if result == expected:
+            print("Pass", nums, k, result)
+        else:
+            print("Fail", nums, k, result, expected)

@@ -1,9 +1,9 @@
-from collections import deque 
+from collections import deque
 
 def findCoursesOrder(courses: map):
     if len(courses) == 0:
         return []
-    
+
     order = []
     q = deque()
     dependencies = {}
@@ -12,8 +12,8 @@ def findCoursesOrder(courses: map):
         for dep in courses[c]:
             if c in dependencies:
                 dependencies[c] = dependencies[c] + 1
-             
-    
+
+
     # Add to the Q courses with 0 dependencies
     for c in dependencies.keys():
         if dependencies[c] == 0:
@@ -29,11 +29,11 @@ def findCoursesOrder(courses: map):
                 dependencies[kcourse] = dependencies[kcourse]-1
                 if dependencies[kcourse] == 0:
                     q.append(kcourse)
-        
+
     for d in dependencies:
         if dependencies[d] > 0:
             return []
-    
+
     return order
 
 
@@ -50,7 +50,15 @@ if __name__ == '__main__':
 
 '''
 Course Schedule II
-There are numCourses courses labeled 0 to numCourses-1. You are given an array prerequisites where prerequisites[i] = [a, b] means you must take course b before course a. Return a valid course ordering as an array. If it is impossible to finish all courses (due to a cycle), return an empty array []. This is a classic application of topological sort — used in build systems, dependency resolvers, and schedulers.
+There are numCourses courses labeled 0 to numCourses-1.
+You are given an array prerequisites where prerequisites[i] = [a, b]
+means you must take course b before course a.
+Return a valid course ordering as an array.
+If it is impossible to finish all courses (due to a cycle),
+return an empty array [].
+This is a classic application of topological sort — used in build systems,
+dependency resolvers, and schedulers.
+
 SIGNATURE
 function findOrder(numCourses: number, prerequisites: number[][]): number[]
 Constraints
@@ -70,5 +78,7 @@ Test Cases
 5	(2, [[0,1],[1,0]])	[] (cycle)
 6	(4, [[1,0],[2,0],[3,1],[3,2]])	[0,1,2,3] or equivalent
 ▼ Hide Hint
-💡 Build an adjacency list + in-degree array. Use Kahn's algorithm (BFS) or DFS with coloring (white/gray/black). If processed count < numCourses, a cycle exists.
+💡 Build an adjacency list + in-degree array.
+   Use Kahn's algorithm (BFS) or DFS with coloring (white/gray/black).
+   If processed count < numCourses, a cycle exists.
 '''

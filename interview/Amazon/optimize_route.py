@@ -12,20 +12,20 @@ def getOptimizedRoute(maxTravelDist, forwardRoute, returnRoute):
                 if sumTravelDistance >= currentMaximumTravel:
                     currentMaximumTravel = sumTravelDistance
                     pairsDistanceList.append([forwardRoute[i][0], returnRoute[j][0], sumTravelDistance])
-    
+
     pairsDistanceList.sort(key= lambda pair: pair[2], reverse=True)
     for i in range(len(pairsDistanceList)):
         if pairsDistanceList[i][2] < currentMaximumTravel:
             break
         pairsList.append([pairsDistanceList[i][0], pairsDistanceList[i][1]])
-    
+
     return pairsList
 
-def sortRoute(): 
+def sortRoute():
     pass
 
 if __name__ == "__main__":
-    
+
     maxTravelDist = 10000
     forwardRoute = [[4,10000], [1,3000], [2,5000], [3,7000]]
     returnRouteList = [[1,2000], [2,3000], [3,4000], [4,5000]]
@@ -83,7 +83,7 @@ if __name__ == "__main__":
     Output:
     [[2,1]]
     Explanation:
-    There are only 3 combinations [1,1], [2,1] and [3,1], which have a total of 4000, 6000 and 8000 miles, respectively. Since 6000 is the largest use that does not exceed 7000, [2,1] is the only optimal pair.  
+    There are only 3 combinations [1,1], [2,1] and [3,1], which have a total of 4000, 6000 and 8000 miles, respectively. Since 6000 is the largest use that does not exceed 7000, [2,1] is the only optimal pair.
 
     Example2
     Input:

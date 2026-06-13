@@ -1,3 +1,6 @@
+# https://en.wikipedia.org/wiki/Tree_traversal
+
+
 class Node:
     def __init__(self, key):
         self.right = None
@@ -53,11 +56,49 @@ class Tree:
         self.postorder(node.right)
         self.visit(node)
 
+    def search(self, value):
+        return self.searchNode(self.root, value)
+
+    def searchNode(self, node: Node, value):
+        if node == None:
+            return None
+        if node.value == value:
+            return node
+        if value < node.value:
+            return self.searchNode(node.left, value)
+        return self.searchNode(node.right, value)
+
+    def breadthFirst(self):
+        self.breadthFirstNode(self.root)
+
+    def breadthFirstNode(self, initialNode: Node):
+        if initialNode == None:
+            return
+        queue = []
+        queue.append(initialNode)
+
+        while len(queue) > 0:
+            node = queue.pop(0)
+            self.visit(node)
+            if node.left != None:
+                queue.append(node.left)
+            if node.right != None:
+                queue.append(node.right)
+
     def visit(self, node: Node):
         print(node.value, ", ", end="")
 
 if __name__ == '__main__':
     print("Tree example")
+
+#      F
+#     / \
+#    B   G
+#   / \   \
+#  A   D    I
+#     / \    \
+#    C   E    H
+#
 
     tree = Tree()
     tree.add('F')
@@ -75,4 +116,12 @@ if __name__ == '__main__':
     tree.inorder(tree.rootNode())
     print('')
     tree.postorder(tree.rootNode())
+    print()
+    node = tree.search('E')
+    if node != None:
+        print("Node ", node.value, " found")
+    else:
+        print("Node not found")
 
+    tree.breadthFirst()
+    print()
