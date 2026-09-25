@@ -43,3 +43,4 @@ if __name__ == "__main__":
             print('YES')
     
 
+    print( "?", 2 <= 5 and 5 <=5 )
